@@ -7,40 +7,28 @@ LESSON: Critter Catcher Project
 # --- Libraries --- #
 
 # D1: Import the random library
-import random
 
 # A1: Import and initialize PYGAME
-import pygame
-
-
 
 # --- Window --- #
 
 # A2: Open a window with size 800 x 600
-window = pygame.display.set_mode([800, 600])
 
 # A3: Create a variable for whether the game is over
 # with value False
-game_over = False
-
 
 # --- Time --- #
 
 # C1: Create a CLOCK
-c = pygame.time.Clock()
 
 # C2: Create a variable for the reaction timer with
 # value 2000
-reaction_timer = 2000
 
 # E1: Create variable for a wait timer with a random
 # value between 750 and 1750
-wait_timer = random.randint(750, 1750)
 
 # H1: Create variable for the total reaction time with
 # value 0
-total_reaction_time = 0
-
 
 # --- Critter --- #
 
@@ -48,8 +36,6 @@ total_reaction_time = 0
 # the critter. For the x position a random number
 # between 50 and 750. For the y position a random
 # number between 50 and 550.
-critter_x = random.randint(50, 750)
-
 
 # H2: Create a variable to track how many critters have
 # been caught starting at 0
