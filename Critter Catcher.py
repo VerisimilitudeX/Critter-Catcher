@@ -78,3 +78,6 @@ print()
 print("FINAL SCORE")
 print("-----------------------------")
 print("Total amount of critters caught: " + str(critters_caught) + "\nAverage reaction time: " + str(total_reaction_time / 1000))
+'''
+fortnite
+'''
