@@ -104,16 +104,16 @@ while not game_over:
                 # took to catch the critter. Assign it
                 # the value
                 # (2000 - reaction timer variable) / 1000
-                time_took_to_catch_critter = (2000 - reaction timer variable) / 1000
+                time_took_to_catch_critter = (2000 - reaction_timer) / 1000
 
                 # F7: Print the reaction time
-                print("Reaction time: " + str(reaction_time))
+                print("Reaction time: " + str(reaction_timer))
 
                 # H4: Remove or comment out F7
 
                 # H5: Increment the total reaction time
                 # by the currect reaction time
-                total_reaction_time += reaction_time
+                total_reaction_time += reaction_timer
 
                 # F8: Set the game over variable to True
                 game_over = True
@@ -183,13 +183,13 @@ while not game_over:
     # --- Time passes --- #
 
     # E4: Decrement the wait timer by get_time
-    wait_timer -= get_time
+    wait_timer -= c.get_time()
 
     # E5: If the wait timer is less than 0
     if wait_timer < 0:
 
     # C4: Decrement the reaction timer by get_time
-        reaction_timer -= get_time
+        reaction_timer -= c.get_time()
 
         # E6: Re-indent C4 above to be inside the block
         # of the E5 if-clause
@@ -219,6 +219,6 @@ print("-----------------------------")
 # H7: Print the total amount of critters caught and the
 # average reaction time
 # ---> TEST AFTER THESE LINES <--- #
-print("Total amount of critters caught: " + str(critters_caught) + "\nAverage reaction time: " + str(total_reaction_time))
+print("Total amount of critters caught: " + str(critters_caught) + "\nAverage reaction time: " + str(total_reaction_time / 1000))
 
 # Turn in your Coding Project.
