@@ -47,6 +47,7 @@ total_reaction_time = 0
 # between 50 and 750. For the y position a random
 # number between 50 and 550.
 critter_x = random.randint(50, 750)
+critter_y = random.randint(50, 550)
 
 # H2: Create a variable to track how many critters have
 # been caught starting at 0
