@@ -81,8 +81,8 @@ while game_over != True:
         # F3: Create variables for the difference in
         # horizontal distance and vertical distance
         # between the critter and the mouse
-        difference_in_horizontal_distance = 0
-        difference_in_vertical_distance = 0
+        difference_in_horizontal_distance = critter_x - x
+        difference_in_vertical_distance = critter_y - y
 
 
         # --- Mouse is over critter --- #
