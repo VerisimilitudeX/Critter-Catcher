@@ -11,7 +11,6 @@ import random
 
 # A1: Import and initialize PYGAME
 import pygame
-
 pygame.init()
 
 # --- Window --- #
@@ -77,7 +76,6 @@ while game_over != True:
         # F2: Get the position of the mouse and assign
         # it to x, y
         x, y = pygame.mouse.get_pos()
-
         # F3: Create variables for the difference in
         # horizontal distance and vertical distance
         # between the critter and the mouse
@@ -90,12 +88,12 @@ while game_over != True:
         # F4: If the horizontal distance between the
         # critter and the mouse is less than 25 and
         # greater than -25
-        if difference_in_horizontal_distance < 25 or difference_in_horizontal_distance > -25:
+        if difference_in_horizontal_distance < 25 and difference_in_horizontal_distance > -25:
 
             # F5: If the vertical distance between the
             # critter and the mouse is less than 25 and
             # greater than -25
-            if difference_in_vertical_distance < 25 or difference_in_vertical_distance > -25:
+            if difference_in_vertical_distance < 25 and difference_in_vertical_distance > -25:
 
                 # H3: Increment how many critters have
                 # been caught by 1
@@ -108,16 +106,16 @@ while game_over != True:
                 time_took_to_catch_critter = (2000 - reaction_timer) / 1000
 
                 # F7: Print the reaction time
-                print("Reaction time: " + str(reaction_timer))
+                print("Reaction time: " + str(time_took_to_catch_critter))
 
                 # H4: Remove or comment out F7
 
                 # H5: Increment the total reaction time
                 # by the currect reaction time
-                total_reaction_time += reaction_timer
+                total_reaction_time += time_took_to_catch_critter
 
                 # F8: Set the game over variable to True
-                game_over = True
+ 
                 # G1: Remove or comment out F8
 
                 # --- Re-set for next round --- #
@@ -127,14 +125,14 @@ while game_over != True:
                 # random value between 750 and 1750
                 reaction_timer = 2000
                 wait_timer = random.randint(750, 1750) 
-                wait_timer = random.randint(750, 1750)
+
                 # G3: Get a new random x and y position
                 # for the critter. Random x between
                 # 50 and 750, and a Random y between
                 # 50 and 550.
                 # ---> TEST AFTER THESE LINES <--- #
-                x = random.randint(50, 750)
-                y = random.randint(50, 550)
+                critter_x = random.randint(50, 750)
+                critter_y = random.randint(50, 550)
 
     #### --- DRAW --- ####
 
@@ -146,14 +144,14 @@ while game_over != True:
     # B2: Create a rectangle for the ground at position
     # 0, 300 with width 800 and height 300. Then draw
     # it with color (150, 255, 150)
-    ground_rect = pygame.Rect(0, 300, 800, 300)
-    pygame.draw.rect(window, (150, 255, 150), ground_rect)
+    ground = pygame.Rect(0, 300, 800, 300)
+    pygame.draw.rect(window, (150, 255, 150), ground)
 
     # B3: Create a rectangle for the water at position
     # -200, 350, with width 1200 and height 500. Then
     # draw it as an ellipse with color (50, 50, 200)
-    water_ellipse = pygame.Rect(-200, 350, 1200, 500)
-    pygame.draw.rect(window, (50, 50, 200), water_ellipse)
+    water = pygame.Rect(-200, 350, 1200, 500)
+    pygame.draw.ellipse(window, (50, 50, 200), water)
 
     # --- Draw critter if it's time --- #
 
@@ -164,7 +162,7 @@ while game_over != True:
     # x and y position with the color of your choice
     # and a radius of 25
     # ---> TEST AFTER THIS LINE <--- #
-        pygame.draw.circle(window, (213, 42, 221), (x, y), 25)
+        pygame.draw.circle(window, (113, 42, 121), (critter_x, critter_y), 25)
 
         # E3: Re-indent D3 above to be inside the block
         # of the E2 if-clause
@@ -203,7 +201,7 @@ while game_over != True:
     # game
     # ---> TEST AFTER THESE LINES <--- #
     if reaction_timer < 0:
-
+        game_over = True
         # F9: Print a message that the critter escaped
         # ---> TEST AFTER THIS LINE <--- #
         print("The critter escaped! You lost. ")
