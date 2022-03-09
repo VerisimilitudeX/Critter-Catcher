@@ -56,7 +56,7 @@ critters_caught = 0
 #### ---- GAME LOOP ---- ####
 
 # A4: Loop while the game is not over
-while not game_over:
+while game_over != True:
 
     #### --- EVENT LOOP --- ####
 
